@@ -31,6 +31,62 @@ body {
   overflow: hidden;
 }
 
+.container{
+ 
+  &>*{
+    z-index: 2;
+  }
+  .lines_bg{
+    position:fixed;
+    left:0;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+
+    .line{
+      width: 1px;
+      height: 100%;
+      background-color: rgb(240,240,240);
+      margin:0 auto;
+      position:relative;
+      &::after{
+        content:"";
+        position:absolute;
+        top:0;
+        left:0;
+        width: 1px;
+        height: 15%;
+        background: linear-gradient(transparent,#cddfff,#0565ff);
+        animation: meteor 5s infinite;
+      }
+
+      &:nth-child(2){
+        &::after{
+          animation-delay: -2s;
+        }
+      }
+      &:nth-child(3){
+        &::after{
+          animation-delay: -3s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes meteor {
+  from{
+    top:0;
+    transform: translateY(-100%);
+  }
+  to{
+    top:100%;
+    transform: translateY(100%);
+  }
+}
+
+
 .header {
   position: absolute;
   top: 0;
@@ -221,7 +277,6 @@ p {
 }
 
 .banner_slider {
-  background-color: white;
   position:relative;
   overflow: hidden;
   .banner {
@@ -449,6 +504,7 @@ p {
 
 .management {
   padding: 5rem 0;
+  background-color: white;
 
   .content_width {
     .teams {
@@ -481,7 +537,7 @@ p {
               max-width: 0;
               overflow: hidden;
               white-space: nowrap;
-              transition: max-width 0.3s ease, padding-left 0.3s ease;
+              transition: max-width 0.5s ease, padding-left 0.5s ease;
               padding-left: 0;
             }
 
