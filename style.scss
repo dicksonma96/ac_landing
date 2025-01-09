@@ -89,7 +89,7 @@ body {
   nav {
     margin-left: auto;
     margin-right: 2rem;
-    background: white;
+    background: rgba(255,255,255,0.75);
     border-radius: 10rem;
     overflow: hidden;
 
@@ -222,6 +222,8 @@ p {
 
 .banner_slider {
   background-color: white;
+  position:relative;
+  overflow: hidden;
   .banner {
     width: 100%;
     .banner_content {
@@ -230,9 +232,6 @@ p {
       padding-top: 10rem;
       padding-left: 10em;
       align-items: flex-start;
-      h1 {
-        margin-bottom: auto;
-      }
     }
     .banner_img {
       width: 40%;
@@ -240,6 +239,25 @@ p {
       object-fit: cover;
       object-position: center;
     }
+  }
+  .nav_btn{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    padding:1rem 0.5rem;
+    cursor:pointer;
+  }
+  .prev_btn{
+    left:0;
+    color:#00234b;
+    background-color: rgb(240,240,240);
+    border-radius: 0 1rem 0 0;
+  }
+  .next_btn{
+    right:0;
+    background-color: #0565ff;
+    color:white;
+    border-radius: 1rem 0 0 0;
   }
 }
 
@@ -654,18 +672,6 @@ p {
   }
 }
 
-@keyframes kenburns {
-  0% {
-    transform: scale(1.1) translate(0, 0); /* Start slightly zoomed in */
-  }
-  50% {
-    transform: scale(1.4) translate(-5%, -5%); /* Zoom in and pan up-left */
-  }
-  100% {
-    transform: scale(1.1) translate(0, 0); /* Return to original position */
-  }
-}
-
 @media only screen and (max-width: 1200px) {
   .sidebar {
     padding: 30px;
@@ -697,16 +703,21 @@ p {
 
   .banner_slider {
     .banner {
-      padding: 7rem 2rem 5rem;
+      padding: 7rem 4rem 5rem;
       align-items: center;
       justify-content: center;
       gap: 2rem;
       .banner_content {
         padding: 0;
+        h1{
+          br{
+            display:none;
+          }
+        }
       }
       .banner_img {
         width: 12rem;
-        height: 20rem;
+        height:20rem;
       }
     }
   }
@@ -796,6 +807,20 @@ p {
     }
   }
 
+  .contact{
+    form{
+      display: grid;
+      grid-template-columns: 1fr;
+      
+      input,textarea{
+        font-size: 16px;
+      }
+      .span2{
+        grid-column: span 1;
+      }
+    }
+  }
+
   .footer {
     .footer_top {
       flex-direction: column;
@@ -821,5 +846,126 @@ p {
         font-size: 1.1rem;
       }
     }
+  }
+}
+
+
+
+.fade-in-bck {
+	-webkit-animation: fade-in-bck 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-bck 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/**
+ * ----------------------------------------
+ * animation fade-in-bck
+ * ----------------------------------------
+ */
+ @-webkit-keyframes fade-in-bck {
+  0% {
+    -webkit-transform: translateZ(80px);
+            transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-bck {
+  0% {
+    -webkit-transform: translateZ(80px);
+            transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+.fade-in-bottom {
+	-webkit-animation: fade-in-bottom 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-bottom 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/**
+ * ----------------------------------------
+ * animation fade-in-bottom
+ * ----------------------------------------
+ */
+ @-webkit-keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes kenburns {
+  0% {
+    transform: scale(1.1) translate(0, 0); /* Start slightly zoomed in */
+  }
+  50% {
+    transform: scale(1.4) translate(-5%, -5%); /* Zoom in and pan up-left */
+  }
+  100% {
+    transform: scale(1.1) translate(0, 0); /* Return to original position */
+  }
+}
+
+.fade-in-top {
+	-webkit-animation: fade-in-top 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-top 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+/**
+ * ----------------------------------------
+ * animation fade-in-top
+ * ----------------------------------------
+ */
+ @-webkit-keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
   }
 }
