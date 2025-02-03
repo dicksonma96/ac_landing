@@ -376,7 +376,7 @@ p {
       justify-content: space-between;
       .card {
         position: relative;
-        img {
+        picture {
           width: 11rem;
         }
         .desc {
@@ -824,10 +824,12 @@ p {
         gap: 1rem;
         grid-template-columns: 1fr 1fr;
         .card {
-          img {
+          picture {
             width: 100%;
             height: 15rem;
-            object-fit: cover;
+            img {
+              object-fit: cover;
+            }
           }
           .desc {
             font-size: 1.25rem;
